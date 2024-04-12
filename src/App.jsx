@@ -21,6 +21,29 @@ function App() {
     setTablesData2(updatedTablesData);
   };
 
+  // const handleSave = (updatedData) => {
+  //   // Handle the updated data here (e.g., save to server)
+  //   fetch('/saveData', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify(updatedData)
+  //   })
+  //   .then(response => {
+  //     if (response.ok) {
+  //       console.log('Data saved successfully');
+  //       // Update local state with the updated data
+  //       setTablesData2(updatedData);
+  //     } else {
+  //       console.error('Error saving data');
+  //     }
+  //   })
+  //   .catch(error => {
+  //     console.error('Error saving data:', error);
+  //   });
+  // };
+
   return (
     <div className="container">
           <div className="table-container">

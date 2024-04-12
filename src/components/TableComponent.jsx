@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react";
 
-const TableComponent = ({ data }) => {
+const TableComponent = ({ data, onSave }) => {
   // Define initial data for the table
   const [editableData, setEditableData] = useState(data.map(item => item.split(':')));
 
@@ -10,11 +10,18 @@ const TableComponent = ({ data }) => {
     setEditableData(newData);
   };
 
+  const handleSaveClick = () => {
+    // Convert editable data back to original format (string with colon separator)
+    const updatedData = editableData.map(item => item.join(':'));
+    onSave(updatedData);
+  };
+
   useEffect(() => {
     setEditableData(data.map(item => item.split(':')))
   }, [data])
   
   return (
+    <div>
     <table>
       <thead>
         <tr>
@@ -43,6 +50,8 @@ const TableComponent = ({ data }) => {
         ))}
       </tbody>
     </table>
+    <button onClick={handleSaveClick}>Save</button>
+    </div>
   );
 };
 

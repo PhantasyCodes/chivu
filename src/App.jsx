@@ -6,9 +6,19 @@ import React, { useState } from 'react';
 
 function App() {
   const [selectedTableIndex, setSelectedTableIndex] = useState(0);
+  const [tablesData2, setTablesData2] = useState(tablesData);
 
   const handleTableSelect = (index) => {
     setSelectedTableIndex(index);
+  };
+
+  const handleSave = (updatedData) => {
+    // Handle the updated data here (e.g., save to database)
+    console.log("Updated Data:", updatedData);
+    // Update tablesData with the updated data
+    const updatedTablesData = [...tablesData];
+    updatedTablesData[selectedTableIndex].data = updatedData;
+    setTablesData2(updatedTablesData);
   };
 
   return (
@@ -20,7 +30,7 @@ function App() {
         ))}
       </div>
       <h2>{tablesData[selectedTableIndex].title}</h2>
-      <TableComponent data={tablesData[selectedTableIndex].data} />
+      <TableComponent data={tablesData[selectedTableIndex].data} onSave={handleSave} />
       </div>
     </div>
   )

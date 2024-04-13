@@ -3,6 +3,7 @@ import './App.css'
 import TableComponent from './components/TableComponent'
 import tablesData from './tablesData';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [selectedTableIndex, setSelectedTableIndex] = useState(0);
@@ -54,6 +55,10 @@ function Home() {
       </div>
       <h2>{tablesData[selectedTableIndex].title}</h2>
       <TableComponent data={tablesData[selectedTableIndex].data} onSave={handleSave} />
+      </div>
+      <div className="navigation-links">
+        <Link to="/login">Login</Link>
+        <Link to="/signup">Sign Up</Link>
       </div>
     </div>
   )

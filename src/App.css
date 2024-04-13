@@ -30,6 +30,26 @@ input:hover, input:focus {
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.navigation-links {
+  margin-top: 20px;
+}
+
+.navigation-links a {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navigation-links a:hover {
+  background-color: #0056b3;
 }

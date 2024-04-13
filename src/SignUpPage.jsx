@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SignUpPage = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: ''
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -58,7 +59,11 @@ const SignUpPage = () => {
           onChange={handleChange}
           style={styles.input}
         />
-        <button type="submit" style={styles.button}>Sign Up</button>
+        <Link to="/">
+          <button type="submit" style={styles.button}>
+            Sign Up
+          </button>
+        </Link>
       </form>
     </div>
   );
@@ -66,33 +71,33 @@ const SignUpPage = () => {
 
 const styles = {
   container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    marginTop: '50px'
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: "50px",
   },
   form: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
   input: {
-    width: '300px',
-    margin: '10px',
-    padding: '10px',
-    borderRadius: '5px',
-    border: '1px solid #ccc'
+    width: "300px",
+    margin: "10px",
+    padding: "10px",
+    borderRadius: "5px",
+    border: "1px solid #ccc",
   },
   button: {
-    width: '300px',
-    margin: '10px',
-    padding: '10px',
-    borderRadius: '5px',
-    border: 'none',
-    backgroundColor: '#007bff',
-    color: '#fff',
-    cursor: 'pointer'
-  }
+    width: "300px",
+    margin: "10px",
+    padding: "10px",
+    borderRadius: "5px",
+    border: "none",
+    backgroundColor: "#007bff",
+    color: "#fff",
+    cursor: "pointer",
+  },
 };
 
 export default SignUpPage;
